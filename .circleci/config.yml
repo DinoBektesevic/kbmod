@@ -12,11 +12,14 @@ jobs:
     steps:
       - checkout
       - run: |
+            export PATH="/usr/local/cuda-11.4/bin:$PATH"
+            nvcc --version
             ls -al /
             ls -al /usr
             ls -al /usr/local
             ls -al /usr/local/cuda
             ls -al /usr/local/cuda-11.4/
+            ls -al /usr/local/cuda-11.4/nvcc
             whoami
             uname -a
             sudo apt install nvidia-cuda-toolkit 
