@@ -13,21 +13,11 @@ jobs:
       - checkout
       - run: |
             export PATH="/usr/local/cuda-11.4/bin:$PATH"
-            nvcc --version
-            ls -al /
-            ls -al /usr
-            ls -al /usr/local
-            ls -al /usr/local/cuda
-            ls -al /usr/local/cuda-11.4/
-            ls -al /usr/local/cuda-11.4/nvcc
-            whoami
-            uname -a
-            sudo apt install nvidia-cuda-toolkit 
-            #git submodule init
-            #git submodule update
-            #pip3 install -e .[test]
-            #flake8 src/kbmod/
-            #python3 -m unittest
+            git submodule init
+            git submodule update
+            pip3 install -e .[test]
+            flake8 src/kbmod/
+            python3 -m unittest
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
