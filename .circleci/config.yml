@@ -17,6 +17,8 @@ jobs:
             ls -al /usr
             ls -al /usr/local
             ls -al /usr/local/cuda
+            whoami
+            uname -a
             sudo apt install nvidia-cuda-toolkit 
             #git submodule init
             #git submodule update
