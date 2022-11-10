@@ -16,6 +16,7 @@ jobs:
             ls -al /usr
             ls -al /usr/local
             ls -al /usr/local/cuda
+            ls -al /usr/local/cuda-11.4/
             whoami
             uname -a
             sudo apt install nvidia-cuda-toolkit 
