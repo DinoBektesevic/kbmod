@@ -29,25 +29,13 @@ jobs:
     # CircleCI will report the results back to your VCS provider.
     steps:
       - checkout
-      - run:
-            name: Build
-            command: pip install -e .[test]
-  flakify:
-    machine:
-      image: ubuntu-2004-cuda-11.4:202110-01
-    steps:
-      - checkout
-      - run:
-            name: Flakify
-            command: flake8 src/kbmod/
-  test:
-    machine:
-      image: ubuntu-2004-cuda-11.4:202110-01
-    steps:
-      - checkout
-      - run:
-            name: Run tests
-            command: cd test && python -m unittest
+      - run: |
+            ls -al 
+            git submodule init
+            git submodule update
+            pip install -e .[test]
+            flake8 src/kbmod/
+            python -m unittest
           
 
 
@@ -59,5 +47,3 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build
-      - flakify
-      - test
