@@ -12,7 +12,6 @@ jobs:
     steps:
       - checkout
       - run: |
-            nvcc --version
             ls -al /
             ls -al /usr
             ls -al /usr/local
