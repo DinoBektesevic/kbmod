@@ -6,14 +6,12 @@ version: 2.1
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build: 
-    resource_class: gpu.nvidia.small
     machine:
       image: ubuntu-2004-cuda-11.4:202110-01
     # Checkout the code as the first step. This is a dedicated CircleCI step.
     steps:
       - checkout
       - run: |
-            ls -al 
             git submodule init
             git submodule update
             pip3 install -e .[test]
